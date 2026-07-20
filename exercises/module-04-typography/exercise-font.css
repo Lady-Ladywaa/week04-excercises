@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* ============================================
    DEBUG — TYPOGRAPHY
    Fix the font issues. Do NOT modify the HTML file.
@@ -11,7 +13,7 @@
 */
 
 .fancy {
-  font-family: "FunkyFont", ;
+  font-family: "FunkyFont",sans-serif ;
 }
 
 
@@ -22,11 +24,11 @@
 */
 
 .thin {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .bold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 
@@ -35,3 +37,6 @@
    Open the HTML file and add the correct <link> from Google Fonts
    to load "Roboto" at weights 400 and 700.
 */
+.google-font {
+    font-family: "Roboto", sans-serif;
+}
