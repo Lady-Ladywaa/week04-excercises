@@ -29,12 +29,12 @@
    Fix: rename these generic selectors to match the BEM classes.
 */
 
-.title {
+.card__title {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.title.btn {
+.card__btn {
   font-size: 1rem;
   padding: 8px 16px;
   background: blue;
