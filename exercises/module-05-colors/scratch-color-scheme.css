@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
 /* ============================================
    SCRATCH — COLOR SCHEME
    Write all CSS from scratch.
@@ -17,3 +18,67 @@
    7. .btn-secondary — background transparent, border var(--secondary), color var(--secondary)
    8. .site-footer — background var(--secondary), white text, text-align center, padding
    ============================================ */
+
+  
+:root {
+    --primary: #ffabbc;
+    --secondary: #f2a48d;
+    --accent: #cdaae7;
+    --bg: #b7705a;
+    --text: #333333;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Spicy Rice", sans-serif;
+}
+
+.site-header {
+    background-color: var(--primary);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    
+}
+
+.site-header a {
+    color: #92a1e6;
+    text-decoration: none;
+}
+
+.site-header a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.site-footer {
+    background-color: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
