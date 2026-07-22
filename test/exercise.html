@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKE</title>
+    
+    <!--เชื่อมไฟล์ไปที่ exercise.css-->
+    <link rel="stylesheet" href="exercise.css">
+</head>
+<body>
+    <header class="navbar">                                       <!--headerเป็น Semantic HTML(การเลือกใช้แท็ก) Element ใช้กำหนดส่วนหัวของหน้าเว็บ ทำให้ Browser และ Search Engine เข้าใจโครงสร้างของเว็บไซต์ ส่วน class=\"navbar\" เป็นการกำหนดชื่อคลาสให้ Element เพื่อให้ CSS และ JavaScript สามารถเลือก Element นี้ไปแต่งให้สวยๆ -->
+      <div class="logo">NIKE</div>                                <!--สร้างกล่อง <div> โดยตั้งชื่อคลาสว่าโลโก้ ส่วน NIKE เป็นข้อความที่อยู่ในกล่องและจะแสดงข้อความนี้อยู่บนหน้าเว็บ-->
+      <nav>                                                       <!--nav เป็นตัวนำทาง-->
+        <a href="https://www.nike.com/th/men">Men</a>               <!--<a>=ใช้สร้างลิงค์,href=เป็น Attributeของอท็ก <a> ใช้กำหนดปลายทางของลิงก์,Men คือ text content ที่ผู้ใช้จะเห็น-->
+        <a href="https://www.nike.com/th/women">Women</a>
+        <a href="https://www.nike.com/th/kids">Kids</a>
+      </nav>
+        <div class="nav-icons">                                   <!--สร้างกล่องสำหรับรวม Action (การกระทำ) ของผู้ใช้ และตั้งชื่อกล่องนี้ว่า actions เพื่อเอาไว้เรียกใช้ใน CSSเวลาเราจะตกแต่ง-->
+        <input type="text" placeholder="🔍 Search">                  <!--สร้างช่องกรอกข้อมูล (Input Field) สำหรับให้ผู้ใช้พิมพ์ข้อความ เช่น ช่องค้นหาสินค้าในเว็บ, Input =สร้างช่องรับข้อมูลจากผู้ใช้ เช่น ช่องค้นหา,กรอกชื่อ,กรอกอีเมล,กรอกรหัส-->
+        <button class="cart-btn">🛒 Cart (0)</button>             <!--สร้างปุ่มให้ผู้ใช้กดได้ เช่น ปุ่มซื้อสินค้า,ปุ่มสมัครสมาชิก-->
+        </div>
+    </header>
+    <main>                                                        <!--คือเนื้อหาหลักของหน้าเว็บ เช่น สินค้า,โปรโมชั่น,บทความ,รูป Banner ใหญ่ๆ,หมวดหมู่-->
+      <div class="container">                                     <!--สร้างกล่องโดยตั้งคลาสว่า container(สิ่งที่บรรจุ,ภาชนะ) กล่องที่ใช้ครอบเนื้อหา เพื่อควบคุมขนาดและตำแหน่ง-->
+         <section class="hero">                                   <!--section ใช้แบ่งเนื้อหาออกเป็นแต่ละส่วนของหน้าเว็บSemantic HTML class="hero" ใช้ตั้งชื่อคลาสว่า hero เพื่อให้ CSSเลือก Element นี้ไปใช้งานได้-->
+            <img src="nike.jpg" alt="Nike Collection">
+            <img src="nikegirl.jpg" alt="Nike girl">
+            
+            <div class="hero-content">
+            <h1>JUST DO IT.</h1>
+            <p>Discover the latest Nike collection.</p>
+            </div>
+         </section>
+          
+        
+                <!--สินค้า-->
+          <section id="products" class="product-section">
+            <h2 class="section-title">Latest Products</h2>
+            
+            <div class="product-grid">
+               <!-- สินค้าที่ 1 -->
+               <div class="product-card">
+                  <img src="Nike Air Max 90.webp" alt="Nike Air Max">
+                  <div class="product-info">
+                     <h3>Nike Air Max 90</h3>
+                     <p class="price">50 THB</p>
+                     <button class="buy-btn">Add to Cart</button>
+                  </div>
+               </div>
+
+               <!-- สินค้าที่ 2 -->
+               <div class="product-card">
+                  <img src="Nike Air Force.webp" alt="Nike Air Force 1">
+                  <div class="product-info">
+                     <h3>Nike Air Force 1</h3>
+                     <p class="price">10 THB</p>
+                     <button class="buy-btn">Add to Cart</button>
+                  </div>
+               </div>
+
+               <!-- สินค้าที่ 3 -->
+               <div class="product-card">
+                  <img src="Nike Pegasus 40.webp" alt="Nike Pegasus">
+                  <div class="product-info">
+                     <h3>Nike Pegasus 40</h3>
+                     <p class="price">60 THB</p>
+                     <button class="buy-btn">Add to Cart</button>
+                  </div>
+               </div>
+            </div>
+         </section>   
+    </main>
+
+                <!--ติดต่อเรานะคะ-->
+    <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="contact-desc">Have any questions? Send us a message!</p>
+            
+            <form class="contact-form">
+               <input type="text" placeholder="Your Name" required>
+               <input type="email" placeholder="Your Email" required>
+               <textarea placeholder="Your Message" rows="4" required></textarea>
+               <button type="submit" class="send-btn">Send Message</button>
+            </form>
+         </section>
+
+      </div>
+    </main>
+
+    <!-- ส่วนท้ายเว็บ (Footer) -->
+    <footer>
+        <p>&copy; 2026 Nike, Inc. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

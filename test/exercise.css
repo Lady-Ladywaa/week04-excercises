@@ -1,0 +1,286 @@
+.navbar {
+    display: flex;                /* จับทุกอย่างมาเรียงแถวแนวนอน */
+    justify-content: space-between; /* ดันซ้ายสุด ขวาสุด ตรงกลางกระจายตัว */
+    align-items: center;          /* จัดทุกอย่างให้อยู่กึ่งกลางแนวตั้ง */
+    padding: 15px 40px;           /* เว้นขอบบน-ล่าง และซ้าย-ขวา */
+    background-color: #af0808;    /* พื้นหลังสีขาวสะอาดตา */
+    border-bottom: 1px solid #ffffff; /* ขีดเส้นใต้บางๆ คั่นระหว่างเมนูและเนื้อหา */
+    position: sticky;             /* ทำให้ Navbar เกาะติดอยู่ด้านบนสุดเวลาเลื่อนหน้าเว็บ */
+    top: 0;
+    z-index: 1000;                /* ให้อยู่ชั้นบนสุดไม่ให้มีอะไรมาบัง */
+}
+
+/* 1. แต่งโลโก้ */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #111111;
+}
+
+/* 2. แต่งกลุ่มเมนูตรงกลาง (<nav>) */
+.navbar nav {
+    display: flex;
+    gap: 30px;                    /* ระยะห่างระหว่างแต่ละเมนู */
+}
+
+.navbar nav a {
+    text-decoration: none;        /* เอาเส้นใต้ลิงก์ออก */
+    color: #111111;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #777777;               /* เปลี่ยนเป็นสีเทาเวลาเอาเมาส์ชี้ */
+}
+
+/* 3. แต่งกล่องฝั่งขวา (ช่องค้นหา + ปุ่มตะกร้า) */
+.navbar .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;                    /* ระยะห่างระหว่างช่องค้นหากับปุ่มตะกร้า */
+}
+
+/* แต่งช่องพิมพ์ค้นหา */
+.navbar input[type="text"] {
+    padding: 8px 15px;
+    border-radius: 20px;          /* ทำขอบโค้งมนสไตล์สปอร์ต */
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    background-color: #f5f5f5;    /* พื้นหลังเทาอ่อนๆ */
+    transition: border-color 0.2s;
+}
+
+.navbar input[type="text"]:focus {
+    border-color: #111111;        /* เปลี่ยนสีขอบเข้มขึ้นเวลาคลิกพิมพ์ */
+    background-color: #ffffff;
+}
+
+/* แต่งปุ่มตะกร้าสินค้า */
+.navbar .cart-btn {
+    padding: 8px 18px;
+    background-color: #111111;    /* ปุ่มสีดำเข้ม */
+    color: #ffffff;               /* ตัวหนังสือสีขาว */
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.navbar .cart-btn:hover {
+    background-color: #333333;    /* สีอ่อนลงนิดนึงเวลาเอาเมาส์ชี้ Hover=ผู้ใช้งานเลื่อนเคอร์เซอร์เมาส์ไปวางทับองค์ประกอบต่างๆ บนหน้าจอเช่น ปุ่ม, ลิงก์, หรือรูปภาพโดยไม่ต้องคลิก แต่ตอนเอาเม้าส์ไปวางปุ่มมีการตอบสนองเช่นปุ่มเปลี่ยนสี,ปุ่มนูนขึ้น,ภาพขยายใหญ่ขึ้น*/ 
+    transform: scale(1.05);       /* ขยายใหญ่ขึ้นเบาๆ */
+}
+
+.hero {
+    position: relative; /* สำคัญ: ให้ลูกๆ อ้างอิงตำแหน่งจากกล่องนี้ */
+    width: 100%;
+    height: 100vh;      /* ความสูงเต็มจอ */
+    overflow: hidden;
+    display: flex;
+}
+.hero img { 
+    width: 50%;         /* ถ้ามี 2 รูป แบ่งกันคนละครึ่งจอซ้าย-ขวา */
+    height: 100%;
+    object-fit: cover;  /* ดึงรูปให้เต็มพื้นที่โดยไม่บิดเบี้ยว */
+}
+.hero-content {
+    position: absolute;  /* สำคัญ: สั่งให้ลอยตัวเหนือรูปภาพ */
+    top: 50%;            /* อยู่กึ่งกลางแนวตั้ง */
+    left: 50%;           /* อยู่กึ่งกลางแนวนอน */
+    transform: translate(-50%, -50%); /* ดึงกลับมาตรงกลางเป๊ะๆ */
+    text-align: center;
+    color: #ffffff;      /* ตัวหนังสือสีขาว */
+    z-index: 10;         /* ให้อยู่ชั้นบนสุด */
+}
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* ใส่เงาให้อ่านง่ายขึ้นบนรูป */
+}
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero-content button:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.05); /* ลูกเล่น Pseudo-class :hover ขยายปุ่มเบาๆ */
+}
+
+/* --- ส่วนรายการสินค้า --- */
+.product-section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/* ใช้ Flexbox จัดเรียงสินค้าให้อยู่แถวเดียวกัน */
+.product-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.product-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Pseudo-class :hover ให้การ์ดลอยขึ้นเวลาเอาเมาส์ชี้ */
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 80%;                  /* ปรับขนาดรูปให้ไม่เต็มขอบเกินไป (หรือปรับตามชอบ เช่น 70%, 200px) */
+    height: 200px;               /* กำหนดความสูงของรูปให้เท่ากันทุกใบ */
+    object-fit: contain;         /* ป้องกันรูปเบี้ยว ช่วยจัดสัดส่วนให้อยู่ในกรอบสวยๆ */
+    display: block;              /* เป็นการแปลงสภาพให้รูปกลายเป็นบล็อกให้แยกตัวออกมา เพื่อทำให้คำสั่งจัดระยะขอบทำงานได้*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #0f0d0d;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #a976c7;
+    color: #6cee68;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Pseudo-class :hover เปลี่ยนสีปุ่มซื้อ */
+.buy-btn:hover {
+    background-color: #68a4d4;
+}
+
+/* --- ส่วนติดต่อเรา (Contact Us) --- */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin-bottom: 60px;
+}
+
+.contact-desc {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+/* Pseudo-class :focus ตอนคลิกพิมพ์ฟอร์ม */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #111;
+}
+
+.send-btn {
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-btn:hover {
+    background-color: #333;
+}
+
+/* Footer ท้ายเว็บ */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 14px;
+    border-top: 1px solid #e5e5e5;
+}
+
+
+
+/* --- รองรับขนาดหน้าจอของโทรศัพท์ Responsive=เขียนโค้ดเพื่อให้หน้าตาเว็บหรือแอป ปรับเปลี่ยนขนาดและจัดวางเลย์เอาต์ได้อัตโนมัติ ให้พอดีกับหน้าจอทุกขนาด --- */
+@media screen and (max-width: 768px) {
+  
+  /* .navbar=เลือก Elementที่มี class="navbar" */
+  .navbar {
+    padding: 15px 20px;     /* padding= ช่องว่างระหว่างของกล่องกับเนื้อหาข้างใน, padding:แนวตั้ง แนวนอน หรือ บน-ล่าง ซ้าย-ขวา บน+ล่าง 15px; ซ้าย+ขวา 20px; */
+  }
+  
+  .navbar nav {
+    display: none; /* ซ่อนเมนูหลักชั่วคราว หรือปรับให้กระชับบนมือถือ */
+  }
+
+  /* 2. Hero Banner บนมือถือ: ปรับรูปภาพให้อยู่แนวตั้ง ไม่ให้เบียดกัน */
+  .hero {
+    flex-direction: column; /* เปลี่ยนจากเรียงซ้าย-ขวา เป็น บน-ลงล่าง */
+    height: auto;
+  }
+
+  .hero img {
+    width: 100%; /* ให้รูปขยายเต็มความกว้างจอ มือถือ */
+    height: 300px;
+  }
+
+  /* 3. ส่วนการ์ดสินค้า: ให้เรียงแถวเดี่ยว (บน-ล่าง) บนมือถือ */
+  .category-grid {
+    flex-direction: column;
+  }
+
+  .category-card {
+    height: 300px; /* ลดความสูงการ์ดลงนิดนึงบนมือถือ */
+  }
+}
